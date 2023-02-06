@@ -8,8 +8,18 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [{
+    pattern: /hljs+/,
+  }],
   theme: {
-    extend: {},
+    extend: {
+      hljs: {
+        theme: 'stackoverflow-dark',
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwind-highlightjs')
+  ],
 }
